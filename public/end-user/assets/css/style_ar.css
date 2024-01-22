@@ -1,0 +1,293 @@
+.owl-item .row.align-items-center,
+.nav-right,
+div#main_nav,
+.mobile-menu-right,
+.find-car-form  .row,
+.about-area .row ,
+.sidebar-about p ,
+.sidebar-contact p ,
+.container.position-relative ,
+.car-area .row ,
+.car-dealer .row , 
+.car-brand .row , 
+.car-footer ,
+.download-content span.site-title-tagline.justify-content-start ,
+.row.footer-widget-wrapper.pt-100.pb-70 {
+    flex-direction: row-reverse;
+}
+.car-single-wrapper .row{
+    flex-direction: row-reverse;
+    justify-content: start;
+}
+
+.car-single-related .row{
+    justify-content: end;
+}
+
+.sidebar-about p, .sidebar-contact p, .container.position-relative, .about-experience{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.download-wrapper .row{
+    justify-content: end;
+    text-align: end;
+}
+
+
+.download-img {
+    position: absolute;
+    left: -50px;
+    right: auto;
+    bottom: -120px;
+    width: 62%;
+}
+
+.car-area ul.car-list {
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: center !important;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.car-area  span.site-title-tagline ,
+.car-dealer span.site-title-tagline,
+.car-brand span.site-title-tagline{
+    flex-direction: row-reverse;
+}
+
+@media (min-width: 992px){
+    .nav-right {
+        margin-right: 50px;
+        margin-left: 0px;
+    }
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row-reverse !important;
+    }
+   
+    .navbar .nav-item:last-child .nav-link {
+         margin-right: 10px;
+    }
+}
+
+.hero-single .hero-img {
+    position: absolute;
+    left: 100px;
+    right: auto;
+}
+
+.car-area h4 ,
+.car-dealer  h4,
+.car-brand h4,
+h4.find-car-title,
+.find-car-form .form-group,
+.nice-select ,
+.nice-select .option,
+.hero-single .hero-content ,
+.about-experience b ,
+.about-right.wow.fadeInRight , 
+.row.footer-widget-wrapper.pt-100.pb-70{
+    text-align: end !important;
+}
+
+.about-area .site-heading span.site-title-tagline.justify-content-start {
+    display: flex;
+    justify-content: end;
+    flex-direction: row-reverse;
+}
+
+.sidebar-about p span , 
+.sidebar-contact p span{
+    margin-left: 1rem!important;
+}
+
+.hero-single .hero-content .hero-btn ,
+.about-area .site-title-tagline , 
+.download-btn{
+    justify-content: end;
+}
+
+.about-experience {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: auto;
+}
+
+.navbar .dropdown-toggle::before {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: baseline;
+    font-family: 'Font Awesome 6 Pro';
+    content: "\f107";
+    font-weight: 600;
+    border: none;
+    font-size: 14px;
+}
+
+.navbar .dropdown-toggle::after {
+    display: none;
+}
+
+.nice-select::after {
+    width: 9px;
+    height: 9px;
+    left: 20px;
+    right: auto;
+}
+
+.footer-widget-title::before {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    width: 90px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    bottom: 0;
+    right: 0;
+    left: auto;
+}
+
+.footer-widget-title::after {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    width: 30px;
+    height: 2px;
+    background-color: var(--theme-color);
+    bottom: 0;
+    right: 18px;
+    left: auto;
+}
+
+.footer-contact li{
+    direction: rtl;
+}
+
+.fa-caret-right:before {
+    content: "";
+}
+
+.footer-widget-box{
+    text-align: end;
+}
+
+.car-item li{
+    direction: rtl;
+}
+
+.dealer-content li {
+    direction: rtl;
+    text-align: start;
+}
+
+.main-navigation ul.dropdown-menu.fade-down {
+    text-align: end;
+}
+
+@media (min-width: 992px){
+    .navbar .nav-item .dropdown-menu .dropdown-item::before {
+        content: "";
+        position: absolute;
+    }
+}
+
+
+.car-single-widget .car-single-top {
+    text-align: start;
+    direction: rtl;
+}
+
+.car-single-widget {
+    direction: rtl;
+}
+
+.car-single-slider{
+    direction: ltr;
+}
+
+.accordion-button::after {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.site-breadcrumb .breadcrumb-menu li::before {
+    position: absolute;
+    content: '';
+    font-family: 'Font Awesome 6 Pro';
+    left: -34px;
+    right: auto;
+    top: 1px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--color-white);
+}
+
+/* ul.breadcrumb-menu {
+    direction: rtl;
+} */
+
+.car-key-content .row{
+    display: flex;
+    flex-direction: row;
+}
+
+.report-arrow {
+    transform: rotateY(0deg) !important;
+}
+
+.car-single-related ul.car-list {
+    direction: rtl;
+}
+
+div#accordionExample {
+    direction: rtl;
+}
+
+/* .car-area ul.car-list li{
+    width: 50%;
+} */
+
+.dealer-listing {
+    position: absolute;
+    right: -20px;
+    left:auto;
+    top: 8px;
+}
+
+
+.filter-box-container{
+
+    direction: rtl;
+}
+
+.filter-box-container h4{
+    text-align:  center !important;
+}
+
+.custom-div-sell-form{
+    direction: rtl;
+}
+
+.custom-header-sell-form{
+    flex-direction: row-reverse;
+}
+
+.custom-sell-form.wrapper .header ul li:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 55px !important;
+    left: auto !important;
+    width: 100%;
+    height: 2px;
+    background: var(--secondary);
+}
+
+.custom-sell-form.wrapper .header ul li {
+    margin-left: 50px;
+    margin-right: 0;
+    position: relative;
+}

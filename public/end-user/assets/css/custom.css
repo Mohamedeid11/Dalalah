@@ -1,0 +1,245 @@
+nav.navbar.navbar-expand-lg {
+    height: 80px;
+}
+
+.py-80 {
+    padding: 70px 0;
+}
+
+ul.dropdown-menu.dropdown-menu-dark.show {
+    min-width: 30px;
+    margin-top: 0;
+    padding: 0;
+}
+
+.site-breadcrumb {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.car-single-author img {
+    border-radius: 0%;
+    width: 100px;
+}
+
+.car-single-widget.custom {
+    border-radius: 0;
+    border: 1px solid #ccc;
+}
+
+.car-single-widget.custom i {
+    font-size: 28px;
+}
+
+div#main_nav {
+    text-align: center;
+}
+
+.accordion-item {
+    margin-bottom: 30px;
+}
+
+.accordion-button:not(.collapsed) {
+    border-bottom: none;
+}
+
+.accordion-button:not(.collapsed) ,
+.accordion-body{
+    background-color: #f4f6f9;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #0b0c0c;
+}
+
+button.accordion-button.collapsed {
+    border: 1px solid #ddd;
+}
+
+ul#myTab.cars-information{
+    display: flex;
+    justify-content: space-around;
+}
+
+.car-key-content {
+    width: 100%;
+}
+
+.report-arrow{
+    transform: rotateY(180deg);
+}
+
+.site-breadcrumb.report::before {
+    background: #fff;
+}
+
+.site-breadcrumb.report {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.sidebar-wrapper {
+    width: 370px;
+    padding: 0px;
+    overflow: auto;
+}
+
+.sidebar-content {
+    padding: 20px;
+}
+
+/* div#main_nav {
+    text-align: center;
+} */
+
+@media (min-width: 992px){
+    .nav-right {
+        margin-left: 50px;
+    }
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color:#fff;
+    background-color: #ef1d26;
+}
+
+.nav-link ,
+.nav-link:hover ,
+.icon-sidebar{
+    color: #ef1d26;
+}
+
+.nav {
+    --bs-nav-link-color: #ef1d26;
+    --bs-nav-link-hover-color: #ef1d26;
+}
+
+@media (min-width: 992px){
+    .navbar .nav-item .nav-link {
+        margin-right: 25px;
+    }
+    .navbar-brand img {
+        width: 220px;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.sidebar-content {
+    position: relative;
+    overflow: inherit;
+    height: 100vh;
+}
+
+.login-form  input[type="radio"] {
+    width: 30px;
+    height: 30px
+}
+
+.car-area .car-item.wow.fadeInUp
+{
+    height: 394px;
+}
+
+.car-btns a {
+    width: 35px;
+    height: 35px;
+    line-height: 36px;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.car-single-slider img {
+    height: 350px !important;
+    width: 100% !important;
+}
+
+.flex-control-thumbs img {
+    height: 180px !important;
+}
+
+.years-home ul.list{
+    height: 300px;
+    overflow: scroll !important;
+}
+
+.brand-slider.owl-carousel .owl-item img {
+    display: inline-block !important;
+}
+
+
+div#main_nav {
+    height: 1px;
+}
+
+.filter-box-container{
+    border: 1px solid #fff;
+    padding: 10px;
+    overflow-y: scroll; 
+    height: 400px;
+    background-color: #fff !important;
+    color: #000 !important;
+    margin-bottom:20px;
+}
+
+
+.filter-box-container.model{
+    height: 250px;
+}
+
+.filter-box-container.price {
+    height: 170px;
+    overflow-y: auto;
+}
+
+.filter-box-container.fuel {
+    height: 200px;
+    overflow-y: hidden;
+}
+
+.filter-box-container.transmission{
+    height: 150px;
+    overflow-y: hidden;
+}
+
+.spinner-style-container{
+    position: fixed;
+    top :0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.284);
+}
+
+@media (min-width: 992px){
+    div#main_nav {
+        height: 1px;
+    }
+}
+

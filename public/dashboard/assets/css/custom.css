@@ -1,0 +1,33 @@
+div#kt_footer {
+    bottom: 0px;
+    left: 0;
+    z-index: -100;
+}
+
+.jop_images img {
+    width: 300px
+}
+
+.word-break {
+    word-break: break-all;
+}
+
+.aside.aside-dark .aside-logo {
+    background-color: #ffffff;
+}
+
+.overlay-body-loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background: #cccccc6b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.error{
+    color:red;
+}
+

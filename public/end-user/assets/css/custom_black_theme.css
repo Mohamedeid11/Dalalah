@@ -1,0 +1,102 @@
+.car-area.grid.bg.py-120  ,
+.sidebar-content ,
+body ,
+.footer-widget,
+.copyright,
+.download-area.mb-120 ,
+.car-brand.py-80 ,
+.car-dealer.py-80,
+.car-area.bg.py-80,
+.find-car ,
+.about-area.py-80 ,
+.navbar-collapse,
+.navbar.fixed-top,
+.navbar ,
+.car-item-single.bg.py-120 
+{
+    background: #000000 !important;
+}
+
+h2.site-title.mb-10 
+{
+    color: #000 !important;
+}
+
+.brand-item h5,
+.about-right .site-heading ,
+.about-right p ,
+.sidebar-content p ,
+.site-title ,
+.navbar-toggler-mobile-icon ,
+.mobile-menu-right .nav-right-link,
+.nav-right .sidebar-btn .nav-right-link, .nav-right .search-btn .nav-right-link ,
+a.lang-site ,
+.navbar .nav-item .nav-link 
+{
+    color: #ffffff !important;
+}
+
+
+@media  (max-width: 767px) {
+    .navbar-brand img {
+        width: 160px;
+        height: 75px;
+    }
+}
+@media  (min-width: 768px) {
+    .navbar-brand img {
+        width: 220px;
+        height: 75px;
+    }
+}
+
+nav.navbar.navbar-expand-lg {
+    height: 91px;
+}
+
+.hero-single::before {
+    background: #000000;
+    opacity: 1;
+}
+
+.brand-item {
+    background: transparent;
+}
+
+.brand-item:hover h5 {
+    color:#ef1d26 !important;
+}
+
+.car-list {
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-top: 12px;
+    margin-left: -20px;
+    margin-right: -18px;
+    padding-bottom: 10px;
+    background-color: #ef1d26;
+}
+
+.car-list i ,
+.car-list li
+{
+    color: #ffffff;
+}
+
+.accordion-body {
+    background-color: #ffffff;
+}
+
+.accordion-body  label{
+    color: #000;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #ef1d26;
+    color: #fff !important;
+}
+
+.accordion-body {
+    max-height: 400px;
+    overflow: auto;
+}

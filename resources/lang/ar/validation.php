@@ -1,0 +1,47 @@
+<?php
+
+return array (
+  'email_required' => 'الايميل مطلوب',
+  'email_email' => 'ادخل الايميل بطريقة صحيحة',
+  'data_error' => 'من فضلك تأكد من البيانات مرة اخرى',
+  'password_required' => 'الباسورد مطلوب',
+  'password_min' => 'الباسورد لا يقل عن 8 احرف او ارقام',
+  'password_confirmed' => 'الباسور غير متطابق',
+  'data_not_correct' => 'البيانات غير صحيحة',
+  'email_unique' => 'الايميل مكرر',
+  'type_required' => 'التصنيف مطلوب',
+  'districts_required' => 'المناطق مطلوبة',
+  'district_exists' => 'تم ادخال منطقة غير موجودة',
+  'has_delivery_required' => 'خدمة التوصيل مطلوبة',
+  'has_delivery_boolean' => 'قيمة خدمة التوصل خطاء',
+  'delivery_fee_required_if' => 'سعر التوصيل مطلوب',
+  'is_online_required' => 'مواعيد المطعم مطلوب',
+  'is_online_boolean' => 'قيمة مواعيد المطعم خطاء',
+  'name_required' => 'الاسم مطلوب',
+  'name_unique' => 'الاسم مكرر',
+  'price_required' => 'السعر مطلوب',
+  'content_required' => 'المحتوى مطلوب',
+  'image_required' => 'الصورة مطلوبة',
+  'images_required' => 'الصور مطلوبة',
+  'images_array' => 'الصور  لابد ان تكون مصفوفة',
+  'image_image' => 'الصور  لابد ان تكون صورة',
+  'phone_numeric' => 'البيانات لابد انت تكون رقم',
+  'product_id_required' => 'المنتج مطلوب',
+  'product_id_exists' => 'المنتج غير موجود',
+  'restaurant_id_exists' => 'المطعم غير موجود',
+  'description_required' => 'الوصف مطلوب',
+  'items_cart_required' => 'العربة فارغة',
+  'phone_required' => 'رقم الهاتف مطلوب',
+  'limit_numeric' => 'لابد ان يكون رقم',
+  'limit_max' => 'الحد الاقص 30 رقم',
+  'order_in' => 'order بين قمتين فقط  ( asc | desc)',
+  'current_password' => 'كلمة المرور غير صحيحة.',
+  'custom' => 
+  array (
+    'attribute-name' => 
+    array (
+      'rule-name' => 'رسالة مخصصة',
+    ),
+  ),
+  'password' => 'كلمة المرور غير صحيحة.',
+);

@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&display=swap');
+
+:root {
+    --theme-color: #00ADCE;
+    --secondary-color: #000;
+    --bg-color: #F5F7F8;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-color);
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+    color: var(--secondary-color);
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: currentColor;
+    cursor: pointer;
+}
+
+main {
+    width: 100vw;
+    min-height: 100vh;
+    background-image: linear-gradient(150deg, var(--theme-color), 60%, #c7eff7, #fff);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .main_view {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding-inline: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .main_view .manICON {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-70%);
+    width: 18%;
+}
+
+main .main_view .splitter {
+    width: 100vh;
+    display: grid;
+    grid-template-columns: 2fr;
+    align-items: flex-end;
+    gap: 5rem;
+}
+
+main .main_view .splitter .data {
+    text-align: center;
+    padding-bottom: 5vh;
+}
+
+main .main_view .splitter .data .logo img {
+    width: 250px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    margin-block: 1rem;
+    margin-left: auto;
+    display: block;
+}
+
+main .main_view .splitter .data p {
+    font-size: 1rem;
+    /*text-align: start;*/
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+main .main_view .splitter .data .coming {
+    background-color: var(--bg-color);
+    padding: 20px;
+    font-size: 1.8rem;
+    text-transform: lowercase;
+    font-weight: 700;
+    border-radius: 50px;
+    margin-inline-end: 30px;
+}
+
+main .main_view .splitter .app {
+    position: relative;
+    text-align: center;
+}
+
+main .main_view .splitter .app .downloads {
+    position: absolute;
+    bottom: 12.5%;
+    left: -20%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+main .main_view .splitter .app .appBTN {
+    width: 200px;
+    padding-right: 15px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 5px #00000010;
+}
+
+main .main_view .splitter .app img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+main footer {
+    background-color: #222;
+    width: 100%;
+    text-align: center;
+    color: #a4a4a4;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+main footer a {
+    color: #d8d8d8;
+}
+
+@media (width <=1024px) {
+
+    main .main_view {
+        padding-inline: 5vw;
+    }
+
+    main .main_view .splitter {
+        gap: 2rem;
+        align-items: center;
+    }
+
+    main .main_view .splitter .data {
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    main .main_view .splitter .data .logo img {
+        width: 50%;
+        margin-bottom: 2rem;
+    }
+
+    main .main_view .splitter .data p {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    main .main_view .splitter .app .downloads {
+        gap: 10px;
+    }
+
+    main .main_view .splitter .app .appBTN {
+        width: 200px;
+        padding-right: 20px;
+    }
+}
+
+@media (width <=800px) {
+    main .main_view .manICON {
+        display: none;
+    }
+
+    main .main_view .splitter {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    main .main_view {
+        padding-inline: 5vw;
+    }
+
+    main {
+        width: 100vw;
+        height: auto;
+        padding-top: 2rem;
+    }
+
+    main .main_view .splitter .app .appBTN {
+        width: 240px;
+    }
+}
+
+@media (width <=400px) {
+
+    main .main_view .splitter .data .logo img {
+        width: 80%;
+    }
+}
+
+@media (width <=350px) {
+    main .main_view .splitter .app .downloads {
+        position: static;
+        margin-block: 20px;
+    }
+
+    main .main_view .splitter .app .appBTN {
+        width: 100%;
+    }
+}
