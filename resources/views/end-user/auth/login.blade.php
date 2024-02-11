@@ -22,7 +22,7 @@
                 <div class="login-form">
                     <div class="login-header">
                         <img src="assets/img/logo/logo.png" alt="">
-                        <p>{{ TranslationHelper::translate('login_with_automobile' ,'site' ) }}</p>
+                        <p>{{ TranslationHelper::translate('login_with_dalalah' ,'site' ) }}</p>
                     </div>
                     <form action="{{ route('end-user.login.action') }}" method="POST">
                         @csrf

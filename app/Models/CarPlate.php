@@ -53,7 +53,13 @@ class CarPlate extends Model implements HasMedia
         }elseif($this->model_name == Admin::class){
             return 'admin';
         }
-        return $this->city?->name . '  , ' . $this->district?->name;
+        if (isset($this->district?->name)){
+            return $this->city?->name . '  , ' . $this->district?->name;
+
+        }else{
+
+            return $this->city?->name;
+        }
     }
 
     public function modelFilter()

@@ -117,7 +117,7 @@ class Car extends Model implements HasMedia
             ];
         }elseif($this->model_name == Admin::class){
             return [
-                'name'       => 'AutoMobile',
+                'name'       => 'Dalalah',
                 'phone'      => setting('phone' ,'en'),
                 'whatsapp'   => setting('phone' ,'en'),
                 'image'      => asset('end-user/assets/img/logo/logo-nav.png'),

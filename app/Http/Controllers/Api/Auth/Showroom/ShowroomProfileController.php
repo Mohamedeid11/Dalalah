@@ -52,9 +52,9 @@ class ShowroomProfileController extends ApiController
         ];
 
         $showroom = $this->showroomService->store($data);
-        Mail::to($showroom->email)->send(new EmailVerification($showroom , 'showroom'));
+//        Mail::to($showroom->email)->send(new EmailVerification($showroom , 'showroom'));
 
-        return $this->returnJSON(['id' => $showroom->id],true, 200 ,__('site.registered_successfully_code_is') . $showroom->code);
+        return $this->returnJSON(new ShowroomResource($showroom),true, 200 ,__('site.registered_successfully_code_is') . $showroom->code);
 
     }
 
@@ -92,7 +92,7 @@ class ShowroomProfileController extends ApiController
         ];
 
         $showroom = $this->showroomService->update(auth('showroom-api')->user() ,$data);
-        return $this->returnJSON(['id' => $showroom->id],true, 200 ,$showroom->name . __(' Updated Successfully'));
+        return $this->returnJSON(new ShowroomResource($showroom),true, 200 ,$showroom->name . __(' Updated Successfully'));
     }
 
     public function updateProfileImage(Request $request)

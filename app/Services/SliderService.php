@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Services;
 
@@ -20,7 +20,13 @@ class SliderService {
     }
 
     public function update($slider ,$data){
-       
+       if($data['type'] == 'showroom'){
+           $slider->update(['link' => null]);
+           unset($data['link']);
+       }else{
+           $slider->update(['showroom_id' => null]);
+           unset($data['showroom_id']);
+       }
         $slider->update(Arr::except($data,['image']));
         if(isset($data['image'])){
             $slider->updateFile($data['image']);

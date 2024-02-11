@@ -94,19 +94,19 @@ class ShowRoomService {
     public function uploadNewFile($showroom ,$data)
     {
         if(isset($data['logo'])){
-            $showroom->updateFile($data['logo'] , '-logo');
+            $showroom->storeFile($data['logo'] , '-logo');
         }
         if(isset($data['image'])){
-            $showroom->updateFile($data['image'] , '-logo');
+            $showroom->storeFile($data['image'] , '-logo');
         }
         if(isset($data['tax_card'])){
-            $showroom->updateFile($data['tax_card'] , '-tax_card');
+            $showroom->storeFile($data['tax_card'] , '-tax_card');
         }
         if(isset($data['cover_image'])){
-            $showroom->updateFile($data['cover_image'] , '-cover_image');
+            $showroom->storeFile($data['cover_image'] , '-cover_image');
         }
         if(isset($data['commercial'])){
-            $showroom->updateFile($data['commercial'] , '-commercial');
+            $showroom->storeFile($data['commercial'] , '-commercial');
         }
     }
 

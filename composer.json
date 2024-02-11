@@ -10,6 +10,7 @@
         "barryvdh/laravel-translation-manager": "^0.6.5",
         "code-lts/laravel-fcm": "^1.8",
         "guzzlehttp/guzzle": "^7.2",
+        "jenssegers/agent": "^2.6",
         "laravel/framework": "^10.0",
         "laravel/passport": "*",
         "laravel/sanctum": "^3.2",

@@ -74,7 +74,7 @@ class CarPlateController extends Controller
      */
     public function show(CarPlate $carPlate)
     {
-        //
+        return $this->returnJSON(new CarPlateResource($carPlate));
     }
 
     /**

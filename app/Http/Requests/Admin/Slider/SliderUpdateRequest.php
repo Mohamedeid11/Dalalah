@@ -23,7 +23,7 @@ class SliderUpdateRequest extends FormRequest
     {
         return [
             'title.*'     => 'nullable',
-            'image'    => 'required'
+            'image'    => 'nullable'
         ];
     }
 }

@@ -43,29 +43,29 @@ class PushNotificationService {
             FacadesNotification::send($showrooms , new  GeneralNotification($data));
             $data['role'] = 'agencies';
             FacadesNotification::send($agencies , new  GeneralNotification($data));
-            if(count($users)){
+            if(count($users) > 0){
                 Firebase::send($data['title'],$data['message'],$users->pluck('id')->toArray() , 'user',['type'=>'general']);
             }
-            if(count($allShowrooms)){
+            if(count($allShowrooms) > 0){
                 Firebase::send($data['title'],$data['message'],$allShowrooms->pluck('id')->toArray() , 'showroom',['type'=>'general']);
             }
         }
         elseif($data['clients'] == 'users'){
-            if(count($users)){
+            if(count($users) > 0){
                 $data['role'] = 'users';
                 FacadesNotification::send($users, new  GeneralNotification($data));
                 Firebase::send($data['title'],$data['message'],$users->pluck('id')->toArray() , 'user',['type'=>'general']);
             }
         }
         elseif($data['clients'] == 'agencies'){
-            if(count($agencies)){
+            if(count($agencies) > 0){
                 $data['role'] = 'agencies';
                 FacadesNotification::send($agencies , new  GeneralNotification($data));
                 Firebase::send($data['title'],$data['message'],$agencies->pluck('id')->toArray() , 'showroom',['type'=>'general']);
             }
         }
         elseif($data['clients'] == 'showrooms'){
-            if(count($showrooms)){
+            if(count($showrooms) > 0){
                 $data['role'] = 'showrooms';
                 FacadesNotification::send($showrooms , new  GeneralNotification($data));
                 Firebase::send($data['title'],$data['message'],$showrooms->pluck('id')->toArray() , 'showroom',['type'=>'general']);
@@ -92,13 +92,13 @@ class PushNotificationService {
         //Used Cars users and showrooms
         elseif($data['clients'] == 'used_cars'){
 
-            if(count($users_used_cars)){
+            if(count($users_used_cars) > 0){
                 $data['role'] = 'users';
                 FacadesNotification::send($users_used_cars, new  GeneralNotification($data));
                 Firebase::send($data['title'],$data['message'],$users_used_cars->pluck('id')->toArray() , 'user',['type'=>'general']);
             }
 
-            if(count($showrooms_used_cars)){
+            if(count($showrooms_used_cars) > 0){
                 $data['role'] = 'showrooms';
                 FacadesNotification::send($showrooms_used_cars , new  GeneralNotification($data));
                 Firebase::send($data['title'],$data['message'],$showrooms_used_cars->pluck('id')->toArray() , 'showroom',['type'=>'general']);

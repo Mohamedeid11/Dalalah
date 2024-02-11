@@ -48,6 +48,46 @@
                                     </div>
                                     @endforeach
 
+                                    <div class="col-6 mt-5">
+                                        <label class="fs-5 fw-bold form-label mb-5"> Type :</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <select id="ad_type" name="type" class="form-control form-control-solid">
+                                            <option value="{{ $slider->type ?? ' Select Type' }}"> {{ $slider->type ?? 'Select Type'}}</option>
+                                        </select>
+                                        @error('type')
+                                        <span class="text-danger" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="col-6 mt-5" @if(!isset($slider->showroom_id))style="display:none"; @endif id="select_showroom_dev">
+                                        <label class="fs-5 fw-bold form-label mb-5"> Showrooms :</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <select id="showroom_select" name="showroom_id" class="form-control form-control-solid">
+                                            <option value="{{$slider->showroom_id}}">{{ $slider?->showroom?->name }}</option>
+                                        </select>
+                                        @error('type')
+                                        <span class="text-danger" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="col-6" id="link_dev" @if(!isset($slider->link))style="display:none"; @endif>
+                                        <label class="fs-5 fw-bold form-label mb-5 "> Link :</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input type="text" id="link" class="form-control form-control-solid" value="{{  $slider->link }}" placeholder="{{ $slider->link }}" name="link" />
+                                        @error('link')
+                                        <span class="text-danger" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                        @enderror
+                                    </div>
+
                                     <div class="col-3 my-3">
                                         <h3> Image </h3>
                                         <!--end::Image input placeholder-->
@@ -104,5 +144,72 @@
         <!--end::Post-->
     </div>
     <!--end::Content-->
-
+</div>
     @endsection
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const adTypeSelect = document.getElementById('ad_type');
+        const adDataInput = document.getElementById('link_dev');
+        const linkDataInput = document.getElementById('link');
+        const showroomSelect = document.getElementById('showroom_select');
+        const showroomDev = document.getElementById('select_showroom_dev');
+
+        // Initialize Select2 for ad type select
+        $(adTypeSelect).select2();
+        console.log(adTypeSelect.value)
+        // Event listener for ad type change
+        $('#ad_type').on('change', function(event) {
+            const type = event.target.value;
+            if (!type) return;
+            if(type === 'showroom'){
+                showroomDev.style.display = "block"
+                linkDataInput.InnerHTML = '';
+                adDataInput.style.display = "none"
+                axios.post('{{ route('ajax.get.addData') }}', {type: type})
+                    .then(function (response) {
+                        // console.log(response)
+                        const data = response.data;
+                        // console.log(data)
+                        // console.log(data)
+                        let options = '<option value="">Select Data</option>';
+
+                        data.forEach(function (item) {
+                            options += `<option value="${item.id}">${item.name}</option>`;
+                        });
+
+                        // Set options for ad data select and trigger Select2
+                        showroomSelect.innerHTML = options;
+                        $(showroomSelect).select2();
+                    })
+                    .catch(function (error) {
+                        console.error('Error fetching ad data:', error);
+                    });
+
+            }else {
+                showroomDev.style.display = "none"
+                showroomSelect.innerHTML = '';
+                adDataInput.style.display = "block"
+            }
+        });
+
+        // Fetch ad types when the page loads
+            axios.get('{{route('ajax.get.addTypes')}}')
+                .then(function (response) {
+                    const types = response.data.types;
+                    let options = '<option value="">' + adTypeSelect.value + '</option>';
+
+                    // Iterate through the types and create options
+                    Object.keys(types).forEach(function (key) {
+                        options += `<option value="${key}">${types[key]}</option>`;
+                    });
+
+                    // Set options for ad type select and trigger Select2
+                    $('#ad_type').html(options).select2();
+                })
+                .catch(function (error) {
+                    console.error('Error fetching ad types:', error);
+                });
+    });
+</script>

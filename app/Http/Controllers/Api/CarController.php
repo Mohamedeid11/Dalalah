@@ -194,7 +194,7 @@ class CarController extends Controller
         $newCar->model_id = auth()->guard('showroom-api')->user()->id;
         $newCar->monthly_installment = $request->monthly_installment;
         $newCar->description = $request->description;
-        $newCar->is_approved = 0;
+        $newCar->is_approved = 1;
         $newCar->ad_type = 'basic';
         $newCar->status = 'new';
 

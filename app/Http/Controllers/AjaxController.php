@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\ShowroomResource;
 use App\Models\Brand;
+use App\Models\Car;
 use App\Models\CarModel;
+use App\Models\CarPlate;
 use App\Models\District;
+use App\Models\Showroom;
 use App\Services\BrandService;
 use Illuminate\Http\Request;
 
@@ -13,7 +17,7 @@ use Illuminate\Http\Request;
 class AjaxController extends Controller
 {
     public $brandService;
-    
+
     public function __construct()
     {
         $this->brandService = new BrandService();
@@ -45,5 +49,26 @@ class AjaxController extends Controller
             return response()->json(['data' => $districts]);
         }
     }
-    
+
+    public function getTypes()
+    {
+        // here the types are key and value
+        $types = [
+            'plate' => 'Plate Ad',
+            'car' => 'Car Ad',
+            'showroom' => 'Showroom',
+        ];
+
+        return response()->json(['types' => $types]);
+    }
+
+    public function getData(Request $request)
+    {
+        if ($request->type == 'showroom'){
+            $showroom = Showroom::hidden(0)->orderBy('id', 'DESC')->get();
+        }
+        return response()->json(ShowroomResource::collection($showroom));
+    }
+
+
 }

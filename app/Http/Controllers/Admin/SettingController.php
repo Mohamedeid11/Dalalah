@@ -111,7 +111,11 @@ class SettingController extends Controller
     }
 
     public function paymentStatus(){
-        $payment =Setting::where('option','show_payment')->update([ 'value' => json_encode( !setting('show_payment','en'))]);
+        if (setting('show_payment','en') == 1){
+            $payment =Setting::where('option','show_payment')->update([ 'value' => ['en'=> 0]]);
+        }else{
+            $payment =Setting::where('option','show_payment')->update([ 'value' => ['en'=> 1]]);
+        }
         $this->cacheSetting();
 
         session()->flash('success', __('Payment Changed Successfully'));

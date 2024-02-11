@@ -37,7 +37,7 @@ class RegisterController extends ApiController
         $endUser = $this->endUserService->store($registerRequest->validated());
         $endUser->update(['fcm_token' => $registerRequest->fcm_token]);
 
-        Mail::to($endUser->email)->send(new EmailVerification($endUser , 'end-user'));
+//        Mail::to($endUser->email)->send(new EmailVerification($endUser , 'end-user'));
 
         return $this->returnJSON(new EndUserResource($endUser) ,true,200,__('site.registered_successfully'));
     }

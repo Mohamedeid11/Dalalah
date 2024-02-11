@@ -109,7 +109,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="<?php url('admin') ?>" class="navbar-brand">
-              Automobile Translation
+                Dalalah Translation
             </a>
         </div>
     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use Carbon\Carbon;
 use Throwable;
 use App\Models\Payment;
 use Illuminate\Bus\Queueable;
@@ -33,7 +34,8 @@ class SuccessPayment implements ShouldQueue
         $payment = Payment::findOrFail($this->id);
 
         if ($payment->ad){
-            $payment->ad->update(['is_hide' => '0' , 'is_approved' => '1' , 'ad_type' => 'featured']);
+            $expired_at = Carbon::now()->addDays(setting('feature_duration','en'));
+            $payment->ad->update(['is_hide' => '0' , 'is_approved' => '1' , 'ad_type' => 'featured' , 'expired_at' => $expired_at]);
         }
 
         if (isset($payment->package_id)){

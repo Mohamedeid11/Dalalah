@@ -34,7 +34,7 @@ class ShowroomEditProfileRequest extends ApiRequest
             'whatsapp'          => 'nullable',
             'end_tax_card'      => 'nullable',
             'tax_card'          => 'nullable',
-            'password'          => 'nullable|min:8',
+            'password'          => 'nullable|min:6',
             'city_id'           => 'nullable|exists:cities,id',
             'district_id'       => 'nullable|exists:districts,id',
             'logo'              => 'nullable|image|mimes:svg,png,jpg,webp,jpeg',

@@ -5,7 +5,7 @@
   'users' => 'Users',
   'new_cars' => 'New cars',
   'agencies' => 'Agencies',
-  'automobile_cars' => 'Automobile cars',
+  'automobile_cars' => 'Dalalah cars',
   'login' => 'Login',
   'sell_trade_your_car' => 'Sell or trade your car',
   'type_keyword' => 'Type keyword',

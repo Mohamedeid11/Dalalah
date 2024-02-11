@@ -51,6 +51,7 @@ Route::get('brand_model_extensions/{carModel}', [BrandController::class , 'getBr
 Route::get('get_cars', [CarController::class , 'index']);
 Route::get('get_my_cars', [CarController::class , 'getMyCars']);
 Route::get('get_plates', [CarPlateController::class , 'index']);
+Route::get('show_plate/{carPlate}', [CarPlateController::class , 'show']);
 Route::get('showroom_plates', [CarPlateController::class , 'showroomPlates']);
 Route::get('car/get/buyed/{car}', [CarController::class , 'carGetBuyed']);
 Route::get('get_admin_cars', [CarController::class , 'getAdminCars']);

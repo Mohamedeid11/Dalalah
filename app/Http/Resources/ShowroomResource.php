@@ -15,13 +15,20 @@ class ShowroomResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+
         $user_id = auth('end-user-api')->check() ? auth('end-user-api')->user()->id : null ;
         $data =  [
             'id'            => $this->id,
-            'owner_name'    => $this->owner_name,
-            'name'          => $this->showroom_name,
+//            'owner_name'    => $this->owner_name,
+//            'name'          => $this->showroom_name,
+//            'description'   => $this->description,
+            'owner_name_ar' => $this->getTranslation('owner_name','ar'),
+            'owner_name_en' => $this->getTranslation('owner_name','en'),
+            'name_ar'       => $this->getTranslation('showroom_name','ar'),
+            'name_en'       => $this->getTranslation('showroom_name','en'),
+            'description_en'=> $this->getTranslation('description','en'),
+            'description_ar'=> $this->getTranslation('description','ar'),
             'email'         => $this->email,
-            'description'   => $this->description,
             'code'          => $this->code,
             'phone'         => $this->phone,
             'whatsapp'      => $this->whatsapp,
@@ -29,6 +36,7 @@ class ShowroomResource extends JsonResource
             'role'          => $this->type,
             'count_cars'    =>  count($this->cars->where('is_hide',0)),
             'avg_rate'      => $this->rate ? $this->avgRate  : '',
+            'city'          => new CityResource($this->city),
             'address'       => $this->getAddress(),
             'is_blocked'    => $this->isBlocked(),
             'is_hide'       => $this->is_hide == 1 ? true : false,

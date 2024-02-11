@@ -165,19 +165,17 @@ class SettingController extends Controller
             $user = user::where('email' , $request->email)->first();
         }
 
-        if ($user){
-            $newPassword = Str::random(6); // You can adjust the password length as needed
-            $user->update(['password' => $newPassword]);
+        if (isset($user)){
+//            $newPassword = Str::random(6); // You can adjust the password length as needed
+//            $user->update(['password' => $newPassword]);
 
-            Mail::to($user->email)->send(new ResetPasswordMail($user ,$newPassword ));
+//            Mail::to($user->email)->send(new ResetPasswordMail($user ,$newPassword ));
 
             return $this->returnSuccess('your new password has been sent to your email');
         }else{
             return $this->returnWrong('wrong email');
         }
 
-        $userEmail = user::where('email' , $request->email)->first();
-        $showroomEmail = user::where('email' , $request->email)->first();
     }
 
     public function paymentStatus(){

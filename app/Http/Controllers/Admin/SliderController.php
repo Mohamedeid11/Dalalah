@@ -19,18 +19,18 @@ use Illuminate\View\View;
 
 class SliderController extends Controller
 {
-    
+
     private $sliderService;
 
     public function __construct()
     {
-        $this->sliderService = new SliderService();    
+        $this->sliderService = new SliderService();
         $this->middleware('permission:sliders.read', ['only' => ['index']]);
         $this->middleware('permission:sliders.create', ['only' => ['create', 'store']]);
         $this->middleware('permission:sliders.edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:sliders.delete', ['only' => ['destroy']]);  
+        $this->middleware('permission:sliders.delete', ['only' => ['destroy']]);
     }
-    
+
     /**
      * Display a listing of the resource.
      */
@@ -53,7 +53,7 @@ class SliderController extends Controller
      */
     public function store(SliderStoreRequest $request) : RedirectResponse
     {
-        $this->sliderService->store($request->validated());
+        $this->sliderService->store($request->all());
         session()->flash('success', __('تم اضافة سلايدر'));
         return back();
     }
@@ -71,7 +71,7 @@ class SliderController extends Controller
      */
     public function update(SliderUpdateRequest $request, Slider $slider) : RedirectResponse
     {
-        $this->sliderService->update($slider , $request->validated());
+        $this->sliderService->update($slider , $request->all());
         session()->flash('success', __('تم تعديل سلايدر'));
         return back();
     }
@@ -85,5 +85,5 @@ class SliderController extends Controller
         session()->flash('success', __('تم مسح القسم'));
         return back();
     }
-    
+
 }

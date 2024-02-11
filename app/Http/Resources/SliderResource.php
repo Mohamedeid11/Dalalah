@@ -7,7 +7,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class SliderResource extends JsonResource
 {
-    
+
     /**
      * Transform the resource into an array.
      *
@@ -16,10 +16,13 @@ class SliderResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id'     => $this->id,
-            'title'  => $this->title ?? '',
-            'image'  => $this->getAvatar(),
+            'id'            => $this->id,
+            'title'         => $this->title ?? '',
+            'type'          => $this->type ?? '',
+            'link'          => $this->link ?? '',
+            'showroom_id'   => $this->showroom_id ?? '',
+            'image'         => $this->getAvatar(),
         ];
     }
-    
+
 }

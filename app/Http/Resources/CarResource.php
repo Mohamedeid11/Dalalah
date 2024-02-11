@@ -43,6 +43,7 @@ class CarResource extends JsonResource
             'engine'             => $this->engine,
             'cylinders'          => $this->cylinders,
             'mileage'            => $this->mileage,
+            'new_car_miles'      => $this->new_car_miles,
             'description'        => $this->getDescription(),
             'main_image'         => $this->getLogo(),
             'images'             => $this->getImages(),

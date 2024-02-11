@@ -33,10 +33,10 @@ class ShowroomApprovedCarNotification extends Notification
     public function toDatabase($notifiable)
     {
         $data = [];
-        $data['title']   = 'Automobile';
+        $data['title']   = 'Dalalah';
         $data['message'] = ' تم قبول سيارتك';
         $data['id']      =  $this->car->id;
         return $data;
     }
-    
+
 }

@@ -44,7 +44,7 @@ class CarAddedNotificationJob implements ShouldQueue
         $admins = Admin::get();
         Notification::send($admins , new CarNotification($this->car));
 
-        $users = User::get();
+        $users = User::whereNotNull('fcm_token')->get();
         Notification::send($users , new CarNotification($this->car));
         Firebase::send(
             'تم اضافة سيارة جديدة',
@@ -57,7 +57,7 @@ class CarAddedNotificationJob implements ShouldQueue
                 'id'   => $this->car->id
             ]);
 
-        $showroom = Showroom::get();
+        $showroom = Showroom::whereNotNull('fcm_token')->get();
         Notification::send($showroom , new CarNotification($this->car));
         Firebase::send(
             'تم اضافة سيارة جديدة',

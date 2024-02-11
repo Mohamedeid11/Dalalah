@@ -45,6 +45,7 @@ class CarPlateService {
         }
         $carPlate = CarPlate::create($data + [
             'ad_type' => 'basic',
+            'is_approved' => 1,
             'expired_at' => Carbon::now()->addDays(setting('feature_basic_duration','en'))
             ]);
 

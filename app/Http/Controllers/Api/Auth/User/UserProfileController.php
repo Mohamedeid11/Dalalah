@@ -36,7 +36,7 @@ class UserProfileController extends ApiController
     {
         $user = auth('end-user-api')->user();
         $this->userService->update($user ,$userEditProfileRequest->validated());
-        return $this->returnJSON(['id' => $user->id],true, 200 ,$user->name . __(' Updated Successfully'));
+        return $this->returnJSON(new EndUserResource($user),true, 200 ,$user->name . __(' Updated Successfully'));
     }
 
     public function updateProfileImage(Request $request)

@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BranchController;
 use App\Http\Controllers\Admin\BrandController;
@@ -29,6 +30,9 @@ use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\PaymentController;
 use Illuminate\Support\Facades\Route;
 
+Route::middleware('guest:admin')->group(function(){
+    Auth::routes(['register' => false]);
+});
 Route::middleware('auth:admin')->group(function(){
 
     Route::get('/' , [DashboardController::class , 'index'])->name('index');
@@ -112,6 +116,8 @@ Route::middleware('auth:admin')->group(function(){
         });
     });
     /************************************ setting ************************************************/
+
+    Route::post('/logout', [LoginController::class , 'logout' ])->name('logout');
 
 });
 

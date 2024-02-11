@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    
+
     /**
      * Run the migrations.
      */
@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('code')->start_from(1400);
             $table->string('password');
             $table->string('fcm_token')->nullable();
-            $table->string('phone');
-            $table->string('whatsapp');
+            $table->string('phone')->nullable();
+            $table->string('whatsapp')->nullable();
             $table->string('end_tax_card')->nullable();
             $table->json('address')->nullable();
             $table->enum('type',['showroom','agency']);
@@ -40,5 +40,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('showrooms');
     }
-    
+
 };

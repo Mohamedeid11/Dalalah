@@ -24,7 +24,7 @@ class Notification extends Model
     public function getTitle(): string
     {
         $data = json_decode($this->data);
-        return ! isset($data->title) ? 'AutoMobile' : $data->title;
+        return ! isset($data->title) ? 'Dalalah' : $data->title;
     }
 
     public function getMessage(): string

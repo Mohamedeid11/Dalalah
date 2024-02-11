@@ -27,10 +27,10 @@ class RegisterRequest extends ApiRequest
         return [
             'name'         => 'required|max:255|unique:users,name',
             'email'        => 'required|email|unique:users,email',
-            'password'     => ['required', 'min:6', 'confirmed'],
+            'password'     => ['required', 'min:6'],
             'image'        => 'nullable|image|mimes:jpg,jpeg,png,gif|max:1024',
-            'phone'        => 'sometimes|unique:users,phone',
-            'whatsapp'     => 'sometimes|unique:users,whatsapp',
+            'phone'        => 'nullable|unique:users,phone',
+            'whatsapp'     => 'nullable|unique:users,whatsapp',
             'city_id'     => 'sometimes|exists:cities,id',
             // 'role'      => ['required', Rule::in(['job-user', 'end-user'])],
             'fcm_token'    => 'nullable' ,
@@ -48,7 +48,7 @@ class RegisterRequest extends ApiRequest
             'email.unique'           => __('mobileValidation.email_unique'),
             'password.required'      => __('mobileValidation.password_required'),
             'password.min'           => __('mobileValidation.password_min'),
-            'password.confirmed'     => __('mobileValidation.password_confirmed'),
+//            'password.confirmed'     => __('mobileValidation.password_confirmed'),
             'phone.required'         => __('mobileValidation.phone_required'),
             'phone.unique'           => __('mobileValidation.phone_unique'),
         ];

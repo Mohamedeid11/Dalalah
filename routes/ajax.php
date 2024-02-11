@@ -9,4 +9,7 @@ Route::get('get_models' , [AjaxController::class, 'getBrandModels'])->name('get.
 Route::get('get_extension' , [AjaxController::class, 'getBrandModelExtension'])->name('get.extension');
 
 
+Route::get('/ad/types/', [AjaxController::class, 'getTypes'])->name('get.addTypes');
+Route::post('/ad/data', [AjaxController::class, 'getData'])->name('get.addData');
+
 

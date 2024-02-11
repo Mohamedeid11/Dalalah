@@ -22,7 +22,7 @@ class UpdateCarPlateRequest extends  ApiRequest
      */
     public function rules(): array
     {
-        $id = $this->route('id');
+        $id = $this->id;
         return [
             'id'                    => 'sometimes|exists:car_plates,id',
             'city_id'               => 'sometimes|exists:cities,id',
@@ -32,7 +32,6 @@ class UpdateCarPlateRequest extends  ApiRequest
             'plate_number'          => 'sometimes|numeric|unique:car_plates,plate_number,' . $id,
             'price'                 => ['sometimes'],
             'plate_type'            => ['sometimes', Rule::in(['transfer', 'private'])],
-            'ad_type'               => ['nullable', Rule::in(['regular', 'special'])],
         ];
     }
 

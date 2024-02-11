@@ -125,7 +125,7 @@ class SettingSeeder extends Seeder
       ]);
       Setting::create([
          'option' => 'show_payment',
-         'value'  => true
+         'value'  => 1
       ]);
 
    }

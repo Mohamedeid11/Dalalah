@@ -106,6 +106,7 @@ class CarService {
             + [
                 'model_name' =>$model[$data['model_role']],
                 'ad_type' => 'basic',
+                'is_approved' => 1,
                 'expired_at' => Carbon::now()->addDays(setting('feature_basic_duration','en')),
                 ]);
 
